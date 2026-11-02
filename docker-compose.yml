@@ -1,6 +1,7 @@
 services:
   app:
     image: sailormana/devops-demo:v1
+    # build: .
     container_name: devops-demo-app
     ports:
       - "8080:8080"
@@ -8,6 +9,10 @@ services:
       SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL:-jdbc:postgresql://db:5432/${POSTGRES_DB:-demo_db_v2}}
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME:-demo_user}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD:-demo_password}
+      # SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/demo_db
+      # SPRING_DATASOURCE_USERNAME: demo_user
+      # SPRING_DATASOURCE_PASSWORD: demo_password
+
     depends_on:
       - db
 
