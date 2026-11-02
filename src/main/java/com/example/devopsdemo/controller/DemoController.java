@@ -8,6 +8,6 @@ public class DemoController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "DevOps demo application is running! Kedua";
+        return "DevOps demo application is running! With Postgres";
     }
 }
